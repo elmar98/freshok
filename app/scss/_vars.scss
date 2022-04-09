@@ -1,0 +1,69 @@
+//colors
+$green-1000: #4D810C;
+$green-900: #63A60F;
+$green-300: #B1D286;
+$green-200: #E0EDCF;
+$green-100: #EFF6E7;
+$dark-900:  #121212;
+$dark-800:  #31352B;
+$dark-600:  #4F4F4F;
+$dark-500:  #505050;
+
+$red-900:    #CF3E3B;
+$orange-900: #FF7A00;
+$yellow-900: #FFB800;
+$silver-800: #575B53;
+$silver-700: #50534B;
+$silver-600: #C1C1C1;
+$silver-500: #CBCCCA;
+$silver-100: #F6F6F6;
+$white:      #FFFFFF;
+$black:      #000000;
+$silver-50:  #EBEBEB;
+
+//fonts
+%opensans-300 {
+	font-family: 'OpenSans-Light', sans-serif;
+	font-weight: 300;
+}
+
+%opensans-400 {
+	font-family: 'OpenSans-Regular', sans-serif;
+	font-weight: 400;
+}
+
+%opensans-600 {
+	font-family: 'OpenSans-SemiBold', sans-serif;
+	font-weight: 600;
+}
+
+%opensans-700 {
+	font-family: 'OpenSans-Bold', sans-serif;
+	font-weight: 700;
+}
+
+%ruda-400 {
+	font-family: 'Ruda-Regular', sans-serif;
+	font-weight: 400;
+}
+
+%ruda-600 {
+	font-family: 'Ruda-SemiBold', sans-serif;
+	font-weight: 600;
+}
+
+%ruda-700 {
+	font-family: 'Ruda-Bold', sans-serif;
+	font-weight: 700;
+}
+
+%ruda-900 {
+	font-family: 'Ruda-Black', sans-serif;
+	font-weight: 900;
+}
+
+%bg {
+	background-size: cover;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
