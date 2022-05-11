@@ -1,0 +1,107 @@
+html {
+	height: 100%;
+}
+
+body {
+	font-size: 14px;
+	line-height: 1.4;
+	background-color: #fff;
+	color: #575B53;
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 400;
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.main {
+	flex: 1 1 auto;
+}
+
+.container {
+	max-width: 1320px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+.logo {
+	flex: 0 0 200px;
+	display: block;
+	&__img {
+			max-width: none;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	@extend %ruda-600;
+	color: $dark-900;
+	letter-spacing: 0.03em;
+	font-size: 32px;
+	margin-bottom: 30px;
+}
+
+
+.badges-green,
+.badges-red, .badges-orange {
+	border-radius: 6px;
+	padding: 3px 6px;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 0.03em;
+	color: $white;
+	display: block;
+	max-width: fit-content;
+	cursor: context-menu;
+}
+.badges-orange {
+	background-color: $orange-900;
+}
+
+.badges-green {
+	background-color: $green-900;
+	
+}
+
+.badges-red {
+	background-color: $red-900;
+}
+
+.price-prev {
+	position: relative;
+	letter-spacing: 0.03em;
+	line-height: 1;
+	color: $silver-600;
+	display: block;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 7px;
+		left: 0;
+		border: 1px solid #C1C1C1;
+      transform: rotate(-14.99deg);
+		display: block;
+		width: 100%;
+	}
+}
+
+.info, 
+.product {
+	margin-bottom: 72px;
+}

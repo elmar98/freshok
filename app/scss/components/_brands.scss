@@ -1,0 +1,30 @@
+.brands {
+	padding: 68px;
+
+	&__inner {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__item {
+		max-width: 80px;
+		opacity: 0.5;
+		transition: 0.3s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__img {
+		object-fit: cover;
+	}
+
+	.slick-initialized .slick-slide{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 65px;
+	 }
+}
