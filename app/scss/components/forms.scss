@@ -5,80 +5,109 @@
 	display: flex;
 	margin-right: 45px;
 
+	@include media-1 {
+		max-width: 350px;
+		margin-right: 0;
+	}
+
+	@include media-2 {
+		max-width: 450px;
+	}
+
+	@include media-3 {
+		position: absolute;
+		bottom: -52px;
+		right: 0;
+		max-width: 100%;
+		border: 1px solid #000;
+		display: none;
+		z-index: 999;
+
+		&--active {
+			display: flex;
+		}
+	}
+
 	&__input {
-	position: relative;
-	max-width: 420px;
-	width: 100%;
-	background: #FFFFFF;
-   border-radius: 6px 0 0 6px;
-	padding: 15px 15px 15px 50px;
-	outline: transparent;
+		position: relative;
+		width: 100%;
+		background: #ffffff;
+		border-radius: 6px 0 0 6px;
+		padding: 15px 15px 15px 50px;
+		outline: transparent;
 
-	&:focus {
-	border: 1px solid #63A60E;
-   box-sizing: border-box;
-   box-shadow: 0 0 0 3px #E0EDCF;
-   border-radius: 3px;
+		&:focus {
+			border: 1px solid #63a60e;
+			box-sizing: border-box;
+			box-shadow: 0 0 0 3px #e0edcf;
+			border-radius: 3px;
+		}
+
+		&::placeholder {
+			letter-spacing: 0.03em;
+			color: #31352b;
+		}
 	}
 
-	&::placeholder {
+	&__icon {
+		height: 20px;
+		position: absolute;
+		top: 50%;
+		left: 13px;
+		transform: translateY(-50%);
+		fill: #31352b;
+		z-index: 99;
+	}
+
+	&__btn {
+		background-color: #31352b;
+		border-radius: 0 6px 6px 0;
+		padding: 15px 52px;
 		letter-spacing: 0.03em;
-		color: #31352B;
+		font-weight: 600;
+		color: #fff;
+		text-transform: uppercase;
+		outline: transparent;
+		transition: background-color 0.3s;
+
+		@include media-1 {
+			padding: 15px 30px;
+		}
+
+		@include media-3 {
+			padding: 15px 25px;
+			border-radius: 0;
+		}
+
+		&:focus {
+			background-color: #50534b;
+			box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+			border-radius: 0 6px 6px 0;
+
+			@include media-3 {
+				border-radius: 0;
+			}
+		}
+
+		&:active {
+			background-color: #31352b;
+			border-radius: 0 6px 6px 0;
+			letter-spacing: 0.03em;
+			color: rgba(255, 255, 255, 0.5);
+			box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+
+			@include media-3 {
+				border-radius: 0;
+			}
+		}
+
+		&:hover {
+			background-color: rgba(49, 53, 43, 0.85);
+			border-radius: 0px 6px 6px 0px;
+			box-shadow: none;
+			@include media-3 {
+				border-radius: 0;
+			}
+		}
 	}
- }
-
- &__icon {
-	 cursor: pointer;
-	 height: 20px;
-	 position: absolute;
-	 top: 50%;
-	 left: 13px;
-	 transform: translateY(-50%);
-	 fill: #31352B;
-	 z-index: 99;
-	 transition: background-color 0.3s;
-
-	 &:hover{
-		background-color: rgba(49, 53, 43, 0.85);
-		border-radius: 3px;
-	}
-
-	&:active {
-		border-radius: 3px;
-		background-color: #616161;
-		fill: #B0B0B0;
-	}
- }
-
- &__btn {
-	background-color: #31352B;
-	border-radius: 0 6px 6px 0;
-	padding: 15px 52px;
-	letter-spacing: 0.03em;
-	font-weight: 600;
-	color: #fff;
-	text-transform: uppercase;
-	outline: transparent;
-	transition: background-color 0.3s;
-
-	&:focus {
-	background-color: #50534B;
-   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
-   border-radius: 0 6px 6px 0;
-	}
-
-	&:active {
-	background-color: #31352B;
-   border-radius: 0 6px 6px 0;
-	letter-spacing: 0.03em;
-   color: rgba(255, 255, 255, 0.5);
-	box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-	}
-
-	&:hover {
-	background-color: rgba(49, 53, 43, 0.85);
-   border-radius: 0px 6px 6px 0px;
-	box-shadow: none;
-	}
- }
 }

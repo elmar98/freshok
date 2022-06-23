@@ -4,9 +4,26 @@
 	&__item {
 		&:not(:last-child) {
 			margin-right: 11px;
+			@include media-3 {
+				margin-right: 0;
+			}
+		}
+
+		&--user {
+			@include media-3 {
+				display: none;
+			}
+		}
+
+		&--search {
+			display: none;
+
+			@include media-3 {
+				display: block;
+			}
 		}
 	}
-	
+
 	&__link {
 		position: relative;
 		width: 50px;
@@ -18,9 +35,9 @@
 		transition: background-color 0.3s, opacity 0.3s;
 
 		&:focus {
-		background: rgba(255, 255, 255, 0.1);
-      box-shadow: inset 0 0 0 3px #EFF6E7;
-      border-radius: 3px;
+			background: rgba(255, 255, 255, 0.1);
+			box-shadow: inset 0 0 0 3px #eff6e7;
+			border-radius: 3px;
 		}
 
 		&:hover {
@@ -28,7 +45,7 @@
 			border-radius: 3px;
 			box-shadow: none;
 		}
-		
+
 		&:active {
 			background: rgba(255, 255, 255, 0.1);
 			box-shadow: none;
@@ -37,25 +54,28 @@
 		&:active svg {
 			opacity: 0.5;
 		}
-}
+	}
 
-&__number {
-	position: absolute;
-	z-index: 99;
-	top: 3px;
-	right: 30px;
-	background-color: #fff;
-	border-radius: 10px;
-	letter-spacing: 0.03em;
-	color: #CF3E3B;
-	line-height: 1;
-	font-size: 10px;
-	font-weight: 600;
-	padding: 4px 3px;
-}
+	&__number {
+		position: absolute;
+		z-index: 99;
+		top: 3px;
+		right: 30px;
+		background-color: #fff;
+		border-radius: 10px;
+		letter-spacing: 0.03em;
+		color: #cf3e3b;
+		line-height: 1;
+		font-size: 10px;
+		font-weight: 600;
+		padding: 4px 3px;
+	}
 
-&__icon {
-	fill: #fff;
-	height: 30px;
-}
+	&__icon {
+		fill: #fff;
+
+		@include media-3 {
+			width: 24px;
+		}
+	}
 }

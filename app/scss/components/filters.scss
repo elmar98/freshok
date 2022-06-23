@@ -1,59 +1,66 @@
 .filters {
-	
 	&__item {
 		&:not(:last-child) {
 			margin-right: 24px;
+
+			@include media-4 {
+				margin-bottom: 15px;
+			}
 		}
 	}
 
 	&__btn {
-	position: relative;
-	font-weight: 700;
-	font-size: 15px;
-	text-transform: uppercase;
-	letter-spacing: 0.03em;
-	color: #505050;
-	outline: transparent;
-	transition: color 0.3s;
-	&:focus {
-	box-shadow: 0 0 0 3px #E0EDCF;
-   border-radius: 3px;
-	}
-
-	&:hover {
-		color: #63A60F;
-		box-shadow: none;
-	}
-	
-	&:active {
+		position: relative;
+		font-weight: 700;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
 		color: #505050;
-		opacity: 1;
-	}
+		outline: transparent;
+		transition: color 0.3s;
 
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -3px;
-		display: block;
-		width: 100%;
-		height: 3px;
-		background-color: rgba(99, 166, 14, 0.2);
-		opacity: 0;
-		transition: opacity 0.3;
-	}
-	&:active::after {
-		opacity: 1;
-	}
+		@include media-4 {
+			font-size: 14px;
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px #e0edcf;
+			border-radius: 3px;
+		}
+
+		&:hover {
+			color: #63a60f;
+			box-shadow: none;
+		}
+
+		&:active {
+			color: #505050;
+			opacity: 1;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -3px;
+			display: block;
+			width: 100%;
+			height: 3px;
+			background-color: rgba(99, 166, 14, 0.2);
+			opacity: 0;
+			transition: opacity 0.3;
+		}
+		&:active::after {
+			opacity: 1;
+		}
 	}
 }
 
 .mixitup-control-active {
-&::after {
-	transition: opacity 0.3;
-	opacity: 0;
-	content: "";
+	&::after {
+		transition: opacity 0.3;
+		opacity: 0;
+		content: "";
 		position: absolute;
 		left: 0;
 		right: 0;
@@ -64,6 +71,5 @@
 		background-color: rgba(99, 166, 14, 0.2);
 		opacity: 1;
 		z-index: 999;
-}
-
+	}
 }

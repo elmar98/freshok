@@ -1,12 +1,26 @@
 .benefits {
-	background-color: #F6F6F6;
+	background-color: #f6f6f6;
 	margin-bottom: 72px;
+
+	@include media-4 {
+		margin-bottom: 48px;
+	}
 
 	&__inner {
 		display: flex;
 		justify-content: center;
 		padding: 48px 0 29px 0;
 		margin-right: 55px;
+
+		@include media-2 {
+			justify-content: space-between;
+			margin-right: 0;
+		}
+
+		@include media-4 {
+			flex-direction: column;
+			padding: 30px 0;
+		}
 	}
 	&__item {
 		position: relative;
@@ -15,61 +29,71 @@
 
 		&:not(:last-child) {
 			margin-right: 85px;
+
+			@include media-2 {
+				margin-right: 50px;
+			}
+
+			@include media-3 {
+				margin-right: 30px;
+			}
+			@include media-4 {
+				margin-right: 0;
+				margin-bottom: 30px;
+				max-width: 100%;
+			}
 		}
 
 		&--scooter {
-
 			&::before {
-					content: "";
-					width: 50px;
-					height: 50px;
-					position: absolute;
-					top: 0;
-					left: 0;
-					background-color: #63A60E;
-					mask-image: url('../images/sprite.svg#icon-scooter');
-					mask-repeat: no-repeat;
-					mask-position: center;
-					mask-size: cover;
-					z-index: 999;
-				}
+				content: "";
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #63a60e;
+				mask-image: url("../images/sprite.svg#icon-scooter");
+				mask-repeat: no-repeat;
+				mask-position: center;
+				mask-size: cover;
+				z-index: 999;
 			}
+		}
 
-			&--return {
+		&--return {
+			&::before {
+				content: "";
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #63a60e;
+				mask-image: url("../images/sprite.svg#icon-return");
+				mask-repeat: no-repeat;
+				mask-position: center;
+				mask-size: cover;
+				z-index: 999;
+			}
+		}
 
-				&::before {
-						content: "";
-						width: 50px;
-						height: 50px;
-						position: absolute;
-						top: 0;
-						left: 0;
-						background-color: #63A60E;
-						mask-image: url('../images/sprite.svg#icon-return');
-						mask-repeat: no-repeat;
-						mask-position: center;
-						mask-size: cover;
-						z-index: 999;
-					}
-				}
-
-				&--24hours {
-
-					&::before {
-							content: "";
-							width: 50px;
-							height: 50px;
-							position: absolute;
-							top: 0;
-							left: 0;
-							background-color: #63A60E;
-							mask-image: url('../images/sprite.svg#icon-24hours');
-							mask-repeat: no-repeat;
-							mask-position: center;
-							mask-size: cover;
-							z-index: 999;
-						}
-					}
+		&--24hours {
+			&::before {
+				content: "";
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #63a60e;
+				mask-image: url("../images/sprite.svg#icon-24hours");
+				mask-repeat: no-repeat;
+				mask-position: center;
+				mask-size: cover;
+				z-index: 999;
+			}
+		}
 	}
 
 	&__title {

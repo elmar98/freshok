@@ -1,44 +1,43 @@
 // подключение базовых стилей
-@import 'common/vars';
-@import 'common/fonts';
-@import 'common/reset';
-@import 'common/libs';
-@import 'common/global';
-@import 'common/mixins';
+@import "common/fonts";
+@import "common/vars";
+@import "common/reset";
+@import "common/libs";
+@import "common/mixins";
+@import "common/global";
 
 // подключение компонентов
 
-@import 'components/filters';
-@import 'components/products-card';
-@import 'components/promo-card';
-@import 'components/badges';
-@import 'components/prices';
-@import 'components/social';
-@import 'components/catalog';
-@import 'components/forms';
-@import 'components/contacts';
-@import 'components/user-nav';
-@import 'components/buttons';
+@import "components/filters";
+@import "components/products-card";
+@import "components/promo-card";
+@import "components/badges";
+@import "components/prices";
+@import "components/social";
+@import "components/catalog";
+@import "components/forms";
+@import "components/contacts";
+@import "components/user-nav";
+@import "components/buttons";
 
 // подключние секции
 
-
 // header
-@import 'header';
+@import "header";
+@import "components/header-menu";
 
 // main
-@import 'top-slider';
-@import 'benefits';
-@import 'top-products';
-@import 'components/banners';
-@import 'components/promo-products';
-@import 'components/brands';
-@import 'components/news';
+@import "top-slider";
+@import "benefits";
+@import "top-products";
+@import "components/banners";
+@import "components/promo-products";
+@import "components/brands";
+@import "components/news";
 
 // catalog-page
-
 
 // product-page
 
 // footer
-@import 'footer';
+@import "footer";

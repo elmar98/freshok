@@ -6,10 +6,11 @@ body {
 	font-size: 14px;
 	line-height: 1.4;
 	background-color: #fff;
-	color: #575B53;
-	font-family: 'OpenSans', sans-serif;
+	color: #575b53;
+	font-family: "OpenSans", sans-serif;
 	font-weight: 400;
 	height: 100%;
+	position: relative;
 }
 
 .wrapper {
@@ -17,6 +18,22 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
+body.lock {
+	overflow-y: hidden;
+}
+
+body.overlay::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.15);
+	z-index: 100;
+}
+
 .main {
 	flex: 1 1 auto;
 }
@@ -40,10 +57,22 @@ body {
 	overflow: hidden;
 }
 .logo {
-	flex: 0 0 200px;
-	display: block;
+	display: inline-block;
+
 	&__img {
-			max-width: none;
+		max-width: 200px;
+		&--big {
+			@include media-1 {
+				display: none;
+			}
+		}
+
+		&--short {
+			display: none;
+			@include media-1 {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -54,33 +83,11 @@ body {
 	letter-spacing: 0.03em;
 	font-size: 32px;
 	margin-bottom: 30px;
-}
 
-
-.badges-green,
-.badges-red, .badges-orange {
-	border-radius: 6px;
-	padding: 3px 6px;
-	font-size: 10px;
-	font-weight: 700;
-	line-height: 1;
-	letter-spacing: 0.03em;
-	color: $white;
-	display: block;
-	max-width: fit-content;
-	cursor: context-menu;
-}
-.badges-orange {
-	background-color: $orange-900;
-}
-
-.badges-green {
-	background-color: $green-900;
-	
-}
-
-.badges-red {
-	background-color: $red-900;
+	@include media-4 {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
 }
 
 .price-prev {
@@ -94,14 +101,14 @@ body {
 		position: absolute;
 		top: 7px;
 		left: 0;
-		border: 1px solid #C1C1C1;
-      transform: rotate(-14.99deg);
+		border: 1px solid #c1c1c1;
+		transform: rotate(-14.99deg);
 		display: block;
 		width: 100%;
 	}
 }
 
-.info, 
+.info,
 .product {
 	margin-bottom: 72px;
 }
