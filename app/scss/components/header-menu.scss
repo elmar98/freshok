@@ -1,11 +1,12 @@
 .header-menu {
 	position: absolute;
-	height: 100vh;
+	height: 108vh;
 	max-width: 300px;
 	background-color: #fff;
-	z-index: 100;
+	z-index: 9999;
 	transform: translateX(-300px);
 	transition: transform 0.3s;
+	overflow-y: auto;
 
 	&__top {
 		display: flex;

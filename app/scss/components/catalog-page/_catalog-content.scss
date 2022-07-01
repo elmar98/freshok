@@ -1,0 +1,420 @@
+.catalog-inner {
+	display: flex;
+}
+
+.catalog-content {
+	margin-bottom: 72px;
+	width: 100%;
+
+	@include media-4 {
+		margin-bottom: 36px;
+	}
+
+	&__filter {
+		margin-bottom: 48px;
+		display: flex;
+		justify-content: end;
+
+		@include media-1 {
+			justify-content: space-between;
+		}
+
+		@include media-4 {
+			margin-bottom: 30px;
+			justify-content: normal;
+		}
+	}
+
+	&__filter-inner {
+		display: flex;
+	}
+
+	.jq-selectbox {
+		margin-right: 15px;
+		@include media-4 {
+			margin-right: 5px;
+		}
+	}
+
+	.jq-selectbox__select {
+		height: 47px;
+		max-width: 149px;
+		padding: 0 11px;
+		display: flex;
+		align-items: center;
+		border: 1px solid #c1c1c1;
+		border-radius: 3px;
+		box-shadow: none;
+		background: linear-gradient(#fff);
+		cursor: pointer;
+		@extend %opensans-400;
+	}
+
+	.jq-selectbox__select-text {
+		width: 106px;
+		color: #505050;
+
+		@include media-4 {
+			font-size: 12px;
+		}
+	}
+
+	.jq-selectbox__trigger {
+		border: none;
+	}
+
+	.jq-selectbox__trigger-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 9px;
+		width: 10px;
+		height: 10px;
+		border: none;
+		background-color: #c1c1c1;
+		mask-image: url("../images/sprite.svg#icon-arrow");
+		border: 1px;
+		border-color: solid #c1c1c1;
+	}
+
+	.jq-selectbox__dropdown {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		border-radius: 4px;
+		background-color: #fff;
+		border: 1px solid #c1c1c1;
+		border-radius: 0px 0 6px 6px;
+		padding: 15px 0 15px 8px;
+		@include media-4 {
+			font-size: 12px;
+			padding: 5px 0 5px 5px;
+		}
+	}
+
+	.jq-selectbox.opened .jq-selectbox__select {
+		border-radius: 3px 3px 0 0;
+		border-color: #505050;
+	}
+
+	.jq-selectbox li {
+		color: #505050;
+		cursor: pointer;
+		&:not(:last-child) {
+			padding-bottom: 15px;
+		}
+
+		@include media-4 {
+			&:not(:last-child) {
+				padding-bottom: 5px;
+			}
+		}
+	}
+
+	&__btn {
+		width: 47px;
+		height: 47px;
+		background-color: #f6f6f6;
+		border-radius: 3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+
+		&--active svg {
+			fill: #63a60e;
+		}
+	}
+
+	.button-list,
+	.button-grid {
+		@include media-2 {
+			display: none;
+		}
+	}
+
+	&__fil-btn {
+		display: none;
+		margin-right: 0;
+		width: 47px;
+		height: 47px;
+		background-color: #f6f6f6;
+		border-radius: 3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&--show {
+			display: none;
+
+			@include media-1 {
+				display: block;
+			}
+		}
+
+		@include media-4 {
+			margin-right: 10px;
+		}
+	}
+
+	&__fil-img {
+		width: 35px;
+		fill: #63a60e;
+	}
+
+	&__img {
+		width: 35px;
+		fill: #c1c1c1;
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include media-4 {
+			flex-direction: column;
+		}
+	}
+
+	&__btn-pag {
+		@include media-3 {
+			padding: 12px;
+		}
+
+		@include media-4 {
+			padding: 12px 24px;
+			margin-bottom: 24px;
+		}
+	}
+}
+
+.catalog-content__select {
+	&.select-name {
+		.jq-selectbox__select {
+			@include media-4 {
+				width: 114px;
+			}
+		}
+
+		.jq-selectbox__dropdown {
+			@include media-4 {
+				width: 114px;
+			}
+		}
+	}
+
+	&.select-number {
+		width: 99px;
+
+		.jq-selectbox__dropdown {
+			width: 99px;
+		}
+
+		@include media-4 {
+			width: 71px;
+			.jq-selectbox__dropdown {
+				width: 71px;
+			}
+		}
+	}
+}
+
+.opened {
+	z-index: 9999 !important;
+}
+
+.pagination {
+	display: flex;
+
+	&__prev {
+		margin-right: 6px;
+
+		&--disabled {
+			.pagination__icon {
+				fill: #c1c1c1;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		margin-right: 6px;
+
+		&--active {
+			border: 1px solid #505050;
+			border-radius: 3px;
+		}
+
+		@include media-4 {
+			&:nth-child(even) {
+				display: none;
+			}
+		}
+	}
+
+	&__link {
+		padding: 15px 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #f6f6f6;
+		border-radius: 3px;
+		text-align: center;
+		width: 48px;
+		height: 48px;
+		color: #505050;
+		font-size: 18px;
+		line-height: 1;
+		@include line-clamp;
+	}
+
+	&__icon {
+		fill: #505050;
+	}
+}
+
+.catalog-products {
+	margin-bottom: 48px;
+
+	@include media-4 {
+		margin-bottom: 24px;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 30px;
+		margin-bottom: 0;
+
+		@include media-3 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media-4 {
+			grid-gap: 5px;
+		}
+
+		&.catalog-products__cards--list {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 30px;
+
+			.catalog-products__item {
+				width: 100%;
+				max-width: 466px;
+				height: fit-content;
+				padding: 0;
+			}
+
+			.catalog-card__info {
+				height: initial;
+				max-width: 264px;
+				width: 100%;
+			}
+
+			.catalog-card {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+			}
+
+			.catalog-card__info-top {
+				margin-top: auto;
+			}
+
+			.catalog-card__title {
+				margin-bottom: 11px;
+				height: 60px;
+				max-width: 170px;
+				margin-top: auto;
+			}
+
+			.catalog-card__bottom {
+				margin-top: auto;
+				margin-bottom: 12px;
+			}
+
+			.catalog-card__link-img {
+				max-width: 200px;
+				width: 100%;
+				padding: 12px;
+			}
+
+			.catalog-card__img {
+				height: 136px;
+				object-fit: contain;
+			}
+
+			.catalog-card__fav {
+				top: 50%;
+				transform: translateY(-50%);
+				right: 14px;
+			}
+		}
+	}
+
+	&__item {
+		width: 100%;
+		padding: 49px 0 18px 0;
+		margin-right: 0;
+		margin-bottom: 0;
+
+		@include media-3 {
+			max-width: 100%;
+		}
+	}
+}
+
+.catalog-card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	&__link-img {
+		margin-bottom: 0;
+
+		@include media-4 {
+			margin: 0 auto;
+		}
+	}
+
+	&__body {
+		flex: 1 1 auto;
+	}
+
+	&__info {
+		height: 125px;
+
+		@include media-4 {
+			height: 155px;
+		}
+	}
+	&__info-top {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__img {
+		width: fit-content;
+		margin: 0 auto;
+
+		@include media-4 {
+			max-width: 120px;
+		}
+	}
+
+	&__bottom {
+		margin-top: auto;
+	}
+}
+
+.benefits-catalog {
+	margin-bottom: 0;
+}

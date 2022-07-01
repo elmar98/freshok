@@ -1,0 +1,43 @@
+.breadcrumbs {
+	background-color: #f6f6f6;
+	padding: 24px 0;
+	margin-bottom: 48px;
+
+	&__list {
+		display: flex;
+
+		a {
+			&:not(:last-child) {
+				color: red;
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+		letter-spacing: 0.03em;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #505050;
+		&:not(:last-child) {
+			padding-right: 17px;
+			&::after {
+				@include pseudo;
+				width: 6px;
+				height: 10px;
+				background-color: #c1c1c1;
+				mask-image: url("../images/sprite.svg#icon-chevron");
+				mask-repeat: no-repeat;
+				mask-size: cover;
+				mask-position: center;
+				right: 6px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&:last-child {
+			color: #63a60f;
+		}
+	}
+}

@@ -19,6 +19,7 @@
 @import "components/contacts";
 @import "components/user-nav";
 @import "components/buttons";
+@import "components/breadcrumbs";
 
 // подключние секции
 
@@ -36,6 +37,8 @@
 @import "components/news";
 
 // catalog-page
+@import "components/catalog-page/_catalog-content";
+@import "components/catalog-page/filter";
 
 // product-page
 

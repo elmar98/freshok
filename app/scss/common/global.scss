@@ -28,10 +28,10 @@ body.overlay::before {
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 100vh;
+	height: 108vh;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.15);
-	z-index: 100;
+	z-index: 9999;
 }
 
 .main {
