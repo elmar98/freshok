@@ -1,5 +1,27 @@
 $(function () {
 
+	$('.product-page__tabs-top-item').on('click', function (e) {
+		e.preventDefault();
+		$('.product-page__tabs-top-item').removeClass('product-page__tabs-top-item--active');
+		$(this).addClass('product-page__tabs-top-item--active');
+
+		$('.product-page__tabs-content-item').removeClass('product-page__tabs-content-item--active');
+		$($(this).attr('href')).addClass('product-page__tabs-content-item--active');
+	});
+
+	$('.product-page__slide-list').slick({
+		infinite: false,
+		prevArrow: '<button type="button" class="top-slider__btn top-slider__btn--prew product-page__slick-prew"><svg class="top-slider__arrow" width="18" height="32"> <use xlink: href="images/sprite.svg#icon-prev"></use><span class="sr-only"> Предыдущий слайд</span></svg></button>',
+		nextArrow: '<button type="button" class="top-slider__btn top-slider__btn--next product-page__slick-next"><svg class="top-slider__arrow" width="18" height="32"> <use xlink: href="images/sprite.svg#icon-next"></use><span class="sr-only"> Следующий слайд</span></svg></button>',
+		responsive: [{
+			breakpoint: 769,
+			settings: {
+				arrows: false,
+				dots: true,
+			}
+		}, ]
+	});
+
 	$('.top-slider__inner').slick({
 		infinite: false,
 		prevArrow: '<button type="button" class="top-slider__btn top-slider__btn--prew"> <svg class="top-slider__arrow" width="80" height="34"> <use xlink: href="images/sprite.svg#icon-prev"></use><span class="sr-only"> Предыдущий слайд</span></svg></button>',
@@ -52,6 +74,34 @@ $(function () {
 				},
 			]
 		});
+	});
+
+	$('.offers__slide').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true,
+		infinite: false,
+		prevArrow: '<button type="button" class="top-slider__btn top-slider__btn--prew"> <svg class="top-slider__arrow" width="80" height="34"> <use xlink: href="images/sprite.svg#icon-prev"></use><span class="sr-only"> Предыдущий слайд</span></svg></button>',
+		nextArrow: '<button type="button" class="top-slider__btn top-slider__btn--next"> <svg class="top-slider__arrow" width="80" height="34"> <use xlink: href="images/sprite.svg#icon-next"></use><span class="sr-only"> Следующий слайд</span></svg></button>',
+
+		responsive: [{
+				breakpoint: 1230,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+
+			{
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					autoplay: false,
+					arrows: false,
+					dots: true,
+				}
+			},
+		]
 	});
 
 	//======первый Каталог=========
@@ -223,6 +273,7 @@ $(function () {
 	});
 
 	$('.catalog-content__select').styler();
+	$('.product-page__count').styler();
 
 	$('.catalog-content__btn').on('click', function () {
 		$('.catalog-content__btn').removeClass('catalog-content__btn--active');
@@ -268,6 +319,24 @@ $(function () {
 			scope: 'local'
 		}
 	};
+
+	$('.rating').rateYo({
+		spacing: "6px",
+		starWidth: "16px",
+		normalFill: "#C1C1C14D",
+		ratedFill: "#FFB800",
+		readOnly: true,
+		starSvg: '<svg><use xlink:href="images/sprite.svg#icon-star"></use></svg>',
+	});
+
+	$('.rating-form').rateYo({
+		spacing: "6px",
+		starWidth: "16px",
+		normalFill: "#C1C1C14D",
+		ratedFill: "#FFB800",
+		fullStar: true,
+		starSvg: '<svg><use xlink:href="images/sprite.svg#icon-star"></use></svg>',
+	});
 
 	var mixer1 = mixitup(containerEl1, config);
 	var mixer2 = mixitup(containerEl2, config);

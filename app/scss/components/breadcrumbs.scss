@@ -11,6 +11,10 @@
 				color: red;
 			}
 		}
+
+		@include media-4 {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__item {

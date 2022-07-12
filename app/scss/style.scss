@@ -37,10 +37,11 @@
 @import "components/news";
 
 // catalog-page
-@import "components/catalog-page/_catalog-content";
-@import "components/catalog-page/filter";
+@import "catalog-page/_catalog-content";
+@import "catalog-page/filter";
 
 // product-page
+@import "product-page/product-page";
 
 // footer
 @import "footer";
